@@ -1,0 +1,8 @@
+aws_region      = "us-east-1"
+project_name    = "wordpress-ecs"
+environment     = "production"
+domain_name     = "themangoking.au"
+certificate_arn = "arn:aws:acm:us-east-1:851725607002:certificate/c987edf8-6750-4d1c-ac1f-7cfaadab5c2e"
+microservice_image = "851725607002.dkr.ecr.us-east-1.amazonaws.com/wordpress-microservice:latest"
+wordpress_image    = "wordpress:latest"
+db_password     = "YourSecurePassword123!"

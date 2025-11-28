@@ -12,11 +12,6 @@ terraform.tfstate.backup
 crash.log
 crash.*.log
 
-# Sensitive variable files
-*.tfvars
-*.tfvars.json
-*.auto.tfvars
-*.auto.tfvars.json
 
 # Local override files (should never commit)
 override.tf
