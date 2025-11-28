@@ -187,7 +187,7 @@ resource "aws_ecs_service" "microservice" {
   }
 
   depends_on = [aws_lb_listener.https]
-}
+
 
   tags = {
     Name        = "${var.project_name}-microservice-service"
