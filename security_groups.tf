@@ -40,13 +40,23 @@ resource "aws_security_group" "ecs_tasks" {
   description = "Security group for ECS tasks"
   vpc_id      = aws_vpc.main.id
 
-  ingress {
-    description     = "Allow traffic from ALB"
-    from_port       = 80
-    to_port         = 80
-    protocol        = "tcp"
-    security_groups = [aws_security_group.alb.id]
-  }
+ # Allow ALB to reach WordPress (port 80)
+ingress {
+  description     = "Allow ALB to reach WordPress"
+  from_port       = 80
+  to_port         = 80
+  protocol        = "tcp"
+  security_groups = [aws_security_group.alb.id]
+}
+
+# Allow ALB to reach microservice (port 3000)
+ingress {
+  description     = "Allow ALB to reach microservice"
+  from_port       = 3000
+  to_port         = 3000
+  protocol        = "tcp"
+  security_groups = [aws_security_group.alb.id]
+}
 
   egress {
     description = "Allow all outbound"
