@@ -1,5 +1,5 @@
 resource "aws_secretsmanager_secret" "db_credentials" {
-  name                    = "${var.project_name}-db-credentials"
+  name                    = "${var.project_name}-db-credentials2"
   description             = "Database credentials for WordPress"
   recovery_window_in_days = 7
 
@@ -9,7 +9,7 @@ resource "aws_secretsmanager_secret" "db_credentials" {
   }
 }
 
-resource "aws_secretsmanager_secret_version" "db_credentials" {
+resource "aws_secretsmanager_secret_version" "db_credentials2" {
   secret_id = aws_secretsmanager_secret.db_credentials.id
   secret_string = jsonencode({
     username = var.db_username
