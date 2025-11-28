@@ -172,6 +172,8 @@ resource "aws_ecs_service" "microservice" {
   desired_count   = var.microservice_desired_count
   launch_type     = "FARGATE"
 
+  health_check_grace_period_seconds = 120
+
   network_configuration {
     subnets          = aws_subnet.private[*].id
     security_groups  = [aws_security_group.ecs_tasks.id]
@@ -185,6 +187,7 @@ resource "aws_ecs_service" "microservice" {
   }
 
   depends_on = [aws_lb_listener.https]
+}
 
   tags = {
     Name        = "${var.project_name}-microservice-service"
