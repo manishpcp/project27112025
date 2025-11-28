@@ -1,0 +1,48 @@
+# Local .terraform directories
+.terraform/
+**/.terraform/*
+
+# Terraform state files
+terraform.tfstate
+terraform.tfstate.backup
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
+
+# Local override files (should never commit)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Lock file (optional)
+.terraform.lock.hcl
+
+# Any plan output files
+*.plan
+*.tfplan
+
+# Ignore VSCode settings
+.vscode/
+
+# Python virtual env (if used)
+.venv/
+
+# Node modules (if used)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git folder (already ignored automatically by Git)
+.git/
